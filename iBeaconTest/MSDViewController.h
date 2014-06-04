@@ -12,4 +12,12 @@
 
 @interface MSDViewController : UIViewController<CLLocationManagerDelegate>
 
+@property (nonatomic, retain) IBOutlet UILabel *b1_major;
+@property (nonatomic, retain) IBOutlet UILabel *b1_minor;
+@property (nonatomic, retain) IBOutlet UILabel *b1_distance;
+
+@property (nonatomic, retain) IBOutlet UILabel *b2_major;
+@property (nonatomic, retain) IBOutlet UILabel *b2_minor;
+@property (nonatomic, retain) IBOutlet UILabel *b2_distance;
+
 @end
