@@ -43,6 +43,14 @@
             self.b1_distance.text = @"Far";
         } else if (beacon1.proximity == CLProximityNear) {
             self.b1_distance.text = @"Near";
+        } else if (beacon1.proximity == CLProximityImmediate) {
+            UILocalNotification *notif = [[UILocalNotification alloc] init];
+            notif.fireDate = [NSDate dateWithTimeIntervalSinceNow:1];
+            notif.alertBody = @"You're near a beacon!";
+            notif.timeZone = [NSTimeZone defaultTimeZone];
+            [[UIApplication sharedApplication] scheduleLocalNotification:notif];
+            
+            self.b1_distance.text = @"Super Close!";
         } else {
             self.b1_distance.text = @"Unk";
         }
@@ -57,6 +65,8 @@
             self.b2_distance.text = @"Far";
         } else if (beacon2.proximity == CLProximityNear) {
             self.b2_distance.text = @"Near";
+        } else if (beacon2.proximity == CLProximityImmediate) {
+            self.b2_distance.text = @"Super Close!";
         } else {
             self.b2_distance.text = @"Unk";
         }
